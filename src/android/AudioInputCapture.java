@@ -39,7 +39,7 @@ public class AudioInputCapture extends CordovaPlugin
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("start")) {
             if (this.callbackContext != null) {
-            	if (receiver) {
+            	if (receiver!=null) {
                     receiver.interrupt();
             	}
                 this.sendUpdate(new JSONObject(), false); // release status callback in JS side
