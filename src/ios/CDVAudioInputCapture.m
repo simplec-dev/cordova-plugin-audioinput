@@ -32,6 +32,15 @@
                  selector:@selector(willEnterForeground)
                      name:UIApplicationWillEnterForegroundNotification
                    object:nil];
+
+    [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+            if (granted) {
+                NSLog(@"Microphone Enabled iOS:");
+            }
+            else {
+                NSLog(@"Microphone DISabled iOS:");
+            }
+        }];
 }
 
 
