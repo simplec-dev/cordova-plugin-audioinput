@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="simplec-plugin-audioinput"
-        version="0.3.2"
+        version="0.3.3"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -38,6 +38,21 @@
 
     <!-- ios -->
     <platform name="ios">
+
+        <preference name="CAMERA_USAGE_DESCRIPTION" default="App would like to access the camera" />
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>$CAMERA_USAGE_DESCRIPTION</string>
+        </config-file>
+
+        <preference name="MICROPHONE_USAGE_DESCRIPTION" default="App would like to access the microphone" />
+        <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
+            <string>$MICROPHONE_USAGE_DESCRIPTION</string>
+        </config-file>
+
+        <preference name="PHOTOLIBRARY_USAGE_DESCRIPTION" default="App would like to access the library" />
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+            <string>$PHOTOLIBRARY_USAGE_DESCRIPTION</string>
+        </config-file>
 
         <config-file parent="/*" target="config.xml">
             <feature name="AudioInputCapture">
